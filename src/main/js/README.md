@@ -18,7 +18,7 @@ This module is published in the public yarn registry at https://registry.yarnpkg
 For CLI usage:
 
 ```
-$ yarn install -g "@nsaechao/repocheck" --registry=https://registry.yarnpkg.com
+$ yarn global add "@nsaechao/repocheck" --registry=https://registry.yarnpkg.com
 ```
 
 For use as a node module, add the following module to your `package.json`:
