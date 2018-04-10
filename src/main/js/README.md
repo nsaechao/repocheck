@@ -21,11 +21,18 @@ For CLI usage:
 $ yarn global add "@nsaechao/repocheck" --registry=https://registry.yarnpkg.com
 ```
 
-For use as a node module, add the following module to your `package.json`:
+
+For use as a node module (not recommended), add the following module to your `package.json`:
+As of writing, the javascript code has es5 > features such as array.map, anonymous functions, classes, and promises.
+This will not be compatible on all browsers and the original intention is to use as a command-line application.
+
+If this changes in the future (likely through polyfill), this documentation will be updated.
+
 
 ```
 $ yarn add `@nsaechao/repocheck` 
 ```
+
 
 ## Testing
 
