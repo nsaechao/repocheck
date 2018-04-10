@@ -1,0 +1,30 @@
+{
+  "name": "@nsaechao/repocheck",
+  "version": "0.0.1",
+  "description": "A command-line tool that accepts a Github org name as input, and prints out relevant information for the provided org.",
+  "main": "src/repocheck.js",
+  "author": "Ny Saechao",
+  "license": "MIT",
+  "bin": {
+    "repocheck-app": "bin/repocheck-app"
+  },
+  "scripts": {
+    "lint": "eslinter src/**/*.js bin/repocheck-app",
+    "test": "mocha"
+  },
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "dependencies": {
+    "columnify": "^1.5.4",
+    "commander": "^2.15.1",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "child-process-promise": "^2.2.1",
+    "eslinter": "^3.2.1",
+    "mocha": "^5.0.5",
+    "nock": "^9.2.3"
+  }
+}

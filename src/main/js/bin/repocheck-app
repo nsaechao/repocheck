@@ -1,0 +1,65 @@
+#!/usr/bin/env node
+'use strict';
+
+/* eslint-disable no-console */
+const process = require('process');
+const console = require('console');
+const RepoCheck = require('../src/repocheck.js');
+const packageJson = require('../package.json');
+const program = require('commander');
+const columnify = require('columnify');
+const errors = require('request-promise/errors');
+
+program
+  .version(packageJson.version)
+  .description('Use -h to get help');
+
+program
+  .command('get <org>')
+  .description(`Print out relevant repo information for the provide organization.`)
+  .option('--sort-by <mode>', `Sort in descending order by either [stars,forks,prs,contribs].`, 'stars')
+  .option('--top <number>', 'Show top-N repos', 5)
+  .option('--user-agent <agent>', 'User-Agent', 'repocheck')
+  // TODO: Remove my hard-coded token
+  .option('--auth-token <token>', 'Github authorization token')
+  .option('--json', 'Output in JSON format.')
+  // TODO: Add option to pass in auth-token through a file
+  // .option('--auth-file <file>', 'Yaml file contain Github Authorization token.')
+  // TODO: Add option for using different GitHub APIs, currently using v4-graphql.
+  // .option('--github-api-version', 'GitHub API version', 'v4-graphql')
+  .action((org, opts) => {
+    if (!opts.top) {
+      throw new Error('\n error: missing required option `--top\' or invalid.\n');
+    } else if (isNaN(parseInt(opts.top))) {
+      // Unfortunately, vanilla js doesn't provide a very strong type system.
+      // Optimistically check if the value is a parseable to a 'number'.
+      throw new Error(`\n error: option \`--top <number>' requires integer. Found value \`${opts.top}' instead.\n`);
+    }
+    if (!opts.sortBy) {
+      throw new Error('\n error: missing required option `--sort-by\' or invalid.\n');
+    }
+
+    const authToken = process.env.AUTH_TOKEN || opts.authToken;
+    if (!authToken) {
+      throw new Error('\n error: missing required option `--auth-token\'.');
+    }
+
+    const repocheck = new RepoCheck(org, opts.sortBy, opts.top, authToken);
+    repocheck
+      .get()
+      .then((body) => {
+        if (opts.json) {
+          console.info(JSON.stringify(body));
+        } else {
+          console.info(columnify(body));
+        }
+      })
+      .catch(errors.TransformError, (err) => {
+        throw new Error(err.cause.message);
+      })
+      .catch((err) => {
+        throw new Error(err.message);
+      });
+  });
+
+program.parse(process.argv);

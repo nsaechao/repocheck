@@ -1,0 +1,370 @@
+[
+    {
+        "scope": "https://api.github.com:443",
+        "method": "POST",
+        "path": "/graphql",
+        "body": {
+            "query": "query {\n        organization(login: \"pantsbuild\") {\n          repositories(first: 100) {\n            edges {\n              node {\n                name\n                forkCount\n                stargazers {\n                  totalCount\n                }\n                pullRequests {\n                  totalCount\n                }\n              }\n              cursor\n            }\n          }\n        }\n      }"
+        },
+        "status": 200,
+        "response": {
+            "data": {
+                "organization": {
+                    "repositories": {
+                        "edges": [
+                            {
+                                "node": {
+                                    "name": "pants",
+                                    "forkCount": 268,
+                                    "stargazers": {
+                                        "totalCount": 938
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 3756
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAG4Acw=="
+                            },
+                            {
+                                "node": {
+                                    "name": "vim-pants",
+                                    "forkCount": 1,
+                                    "stargazers": {
+                                        "totalCount": 6
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAMHsrA=="
+                            },
+                            {
+                                "node": {
+                                    "name": "pantsbuild.github.io",
+                                    "forkCount": 6,
+                                    "stargazers": {
+                                        "totalCount": 9
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 6
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAMYinQ=="
+                            },
+                            {
+                                "node": {
+                                    "name": "ivy",
+                                    "forkCount": 1,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOANbNAQ=="
+                            },
+                            {
+                                "node": {
+                                    "name": "jmake",
+                                    "forkCount": 11,
+                                    "stargazers": {
+                                        "totalCount": 5
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 18
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOANbNMA=="
+                            },
+                            {
+                                "node": {
+                                    "name": "binaries",
+                                    "forkCount": 17,
+                                    "stargazers": {
+                                        "totalCount": 7
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 55
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOARyfog=="
+                            },
+                            {
+                                "node": {
+                                    "name": "pex",
+                                    "forkCount": 114,
+                                    "stargazers": {
+                                        "totalCount": 979
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 183
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAVDNqg=="
+                            },
+                            {
+                                "node": {
+                                    "name": "pants-utils",
+                                    "forkCount": 1,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 1
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAVpGfw=="
+                            },
+                            {
+                                "node": {
+                                    "name": "intellij-pants-plugin",
+                                    "forkCount": 28,
+                                    "stargazers": {
+                                        "totalCount": 42
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 217
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAWDmQg=="
+                            },
+                            {
+                                "node": {
+                                    "name": "setup",
+                                    "forkCount": 6,
+                                    "stargazers": {
+                                        "totalCount": 4
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 8
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAYhQ7A=="
+                            },
+                            {
+                                "node": {
+                                    "name": "thrift-0.5.0-finagle",
+                                    "forkCount": 0,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAcYm5Q=="
+                            },
+                            {
+                                "node": {
+                                    "name": "maven-repo",
+                                    "forkCount": 5,
+                                    "stargazers": {
+                                        "totalCount": 3
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAfrL9A=="
+                            },
+                            {
+                                "node": {
+                                    "name": "zincutils",
+                                    "forkCount": 1,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 7
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAf8Icg=="
+                            },
+                            {
+                                "node": {
+                                    "name": "jarjar",
+                                    "forkCount": 14,
+                                    "stargazers": {
+                                        "totalCount": 18
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 20
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAgLzTg=="
+                            },
+                            {
+                                "node": {
+                                    "name": "indexed-classloader",
+                                    "forkCount": 2,
+                                    "stargazers": {
+                                        "totalCount": 1
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAgfrlg=="
+                            },
+                            {
+                                "node": {
+                                    "name": "cookbook",
+                                    "forkCount": 0,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 1
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAiC+eA=="
+                            },
+                            {
+                                "node": {
+                                    "name": "issues-1751",
+                                    "forkCount": 1,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAk63Hg=="
+                            },
+                            {
+                                "node": {
+                                    "name": "issues-1779",
+                                    "forkCount": 0,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAlAZMg=="
+                            },
+                            {
+                                "node": {
+                                    "name": "issues-2566",
+                                    "forkCount": 0,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAsF8hw=="
+                            },
+                            {
+                                "node": {
+                                    "name": "node-preinstalled-modules",
+                                    "forkCount": 0,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOAtPR0w=="
+                            },
+                            {
+                                "node": {
+                                    "name": "issues-3174",
+                                    "forkCount": 0,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOA1V8bg=="
+                            },
+                            {
+                                "node": {
+                                    "name": "issues-3417",
+                                    "forkCount": 0,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOA35Gig=="
+                            },
+                            {
+                                "node": {
+                                    "name": "rust-www",
+                                    "forkCount": 0,
+                                    "stargazers": {
+                                        "totalCount": 0
+                                    },
+                                    "pullRequests": {
+                                        "totalCount": 0
+                                    }
+                                },
+                                "cursor": "Y3Vyc29yOnYyOpHOBaRIjA=="
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "rawHeaders": [
+            "Date",
+            "Mon, 09 Apr 2018 16:33:45 GMT",
+            "Content-Type",
+            "application/json; charset=utf-8",
+            "Content-Length",
+            "3387",
+            "Connection",
+            "close",
+            "Server",
+            "GitHub.com",
+            "Status",
+            "200 OK",
+            "X-RateLimit-Limit",
+            "5000",
+            "X-RateLimit-Remaining",
+            "4999",
+            "X-RateLimit-Reset",
+            "1523295225",
+            "Cache-Control",
+            "no-cache",
+            "X-OAuth-Scopes",
+            "repo",
+            "X-Accepted-OAuth-Scopes",
+            "repo",
+            "X-GitHub-Media-Type",
+            "github.v4",
+            "Access-Control-Expose-Headers",
+            "ETag, Link, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+            "Access-Control-Allow-Origin",
+            "*",
+            "Strict-Transport-Security",
+            "max-age=31536000; includeSubdomains; preload",
+            "X-Frame-Options",
+            "deny",
+            "X-Content-Type-Options",
+            "nosniff",
+            "X-XSS-Protection",
+            "1; mode=block",
+            "Referrer-Policy",
+            "origin-when-cross-origin, strict-origin-when-cross-origin",
+            "Content-Security-Policy",
+            "default-src 'none'",
+            "X-Runtime-rack",
+            "0.235223",
+            "Vary",
+            "Accept-Encoding",
+            "X-GitHub-Request-Id",
+            "2763:8AF5:25DCBCA:30426C2:5ACB95E8"
+        ]
+    }
+]
